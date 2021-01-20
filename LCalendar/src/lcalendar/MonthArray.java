@@ -8,7 +8,7 @@ public class MonthArray {
 	private int arr[] = new int[49];
 	
 	public MonthArray(int month, int year) {
-		//populate the array and private variables with integers based on the days of the week of that month in that year
+		//populate the array and private variables with integers based on the weekdays of that month in that year
 	}
 	
 	public int getFirst() {
