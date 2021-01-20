@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+
+<GridPane fx:controller="lcalendar.controllers.LCalendarController" xmlns:fx="http://javafx.com/fxml/1" fx:id="root" alignment="CENTER" minWidth="700" minHeight="770" gridLinesVisible="false">
+		<rowConstraints>
+	        <RowConstraints percentHeight="10"/>
+	        <RowConstraints percentHeight="90"/>
+	    </rowConstraints>
+		<columnConstraints>
+	        <ColumnConstraints percentWidth="14.29"/>
+	        <ColumnConstraints percentWidth="14.29"/>
+	        <ColumnConstraints percentWidth="14.29"/>
+	        <ColumnConstraints percentWidth="14.29"/>
+	        <ColumnConstraints percentWidth="14.29"/>
+	        <ColumnConstraints percentWidth="14.29"/>
+	        <ColumnConstraints percentWidth="14.29"/>
+	    </columnConstraints>
+	    <HBox styleClass="month-box" alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0">
+	    	<padding>
+        		<Insets left="30"/>
+    		</padding>
+	    	<Text styleClass="month-text">December 2020</Text>
+	    </HBox>
+	    <HBox styleClass="cycle-box" alignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="0">
+	    	<HBox styleClass="cycle-btn" alignment="CENTER" minWidth="40" minHeight="40" maxWidth="40" maxHeight="40">
+	    		<Text styleClass="cycle-text">❮</Text>
+	    	</HBox>
+	    	<HBox styleClass="cycle-btn" alignment="CENTER" minWidth="40" minHeight="40" maxWidth="40" maxHeight="40">
+	    		<Text styleClass="cycle-text">❯</Text>
+	    	</HBox>
+	    </HBox>
+	    <HBox styleClass="toolbar" fx:id="toolbar" alignment="CENTER_RIGHT" spacing="10" GridPane.columnIndex="4" GridPane.rowIndex="0" GridPane.columnSpan="2" onMousePressed="#handleToolbarPress" onMouseDragged="#handleToolbarDrag">
+    		<HBox styleClass="add-btn" fx:id="addBtn" alignment="CENTER" minWidth="30" minHeight="30" maxWidth="30" maxHeight="30" onMouseEntered="#handleButtonEnter" onMouseExited="#handleButtonExit" onMousePressed="#handleButtonPress" onMouseReleased="#handleButtonRelease">
+    			<ImageView fx:id="addBtnImage" fitHeight="30" fitWidth="30" styleClass="add-btn-img">
+    				<image>
+    					<Image url="@../resources/add-icon.png"/>
+    				</image>
+    			</ImageView>
+	    	</HBox>
+	    	<HBox styleClass="settings-btn" fx:id="settingsBtn" alignment="CENTER" minWidth="30" minHeight="30" maxWidth="30" maxHeight="30" onMouseEntered="#handleButtonEnter" onMouseExited="#handleButtonExit" onMousePressed="#handleButtonPress" onMouseReleased="#handleButtonRelease">
+	    		<ImageView fx:id="settingsBtnImage" fitHeight="30" fitWidth="30" styleClass="settings-btn-img">
+    				<image>
+    					<Image url="@../resources/settings-icon.png"/>
+    				</image>
+    			</ImageView>
+	    	</HBox>
+	    	<HBox styleClass="help-btn" fx:id="helpBtn" alignment="CENTER" minWidth="30" minHeight="30" maxWidth="30" maxHeight="30" onMouseEntered="#handleButtonEnter" onMouseExited="#handleButtonExit" onMousePressed="#handleButtonPress" onMouseReleased="#handleButtonRelease">
+	    		<ImageView fx:id="helpBtnImage" fitHeight="30" fitWidth="30" styleClass="help-btn-img">
+    				<image>
+    					<Image url="@../resources/help-icon.png"/>
+    				</image>
+    			</ImageView>
+	    	</HBox>
+	    </HBox>
+	    <HBox styleClass="exit-box" alignment="TOP_RIGHT" GridPane.columnIndex="6" GridPane.rowIndex="0" GridPane.columnSpan="1" onMousePressed="#handleToolbarPress" onMouseDragged="#handleToolbarDrag">
+	    	<HBox styleClass="exit-btn" onMouseClicked="#handleExitAction" alignment="CENTER" minWidth="40" minHeight="30" maxWidth="40" maxHeight="30">
+	    		<padding>
+        			<Insets bottom="4"/>
+    			</padding>
+	    		<Text styleClass="exit-btn-text">⨉</Text>
+	    	</HBox>
+	    </HBox>
+		<GridPane alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.columnSpan="7">
+			<rowConstraints>
+	        	<RowConstraints percentHeight="14.29"/>
+	        	<RowConstraints percentHeight="14.29"/>
+	        	<RowConstraints percentHeight="14.29"/>
+	        	<RowConstraints percentHeight="14.29"/>
+	        	<RowConstraints percentHeight="14.29"/>
+	        	<RowConstraints percentHeight="14.29"/>
+	        	<RowConstraints percentHeight="14.29"/>
+	    	</rowConstraints>
+			<columnConstraints>
+	        	<ColumnConstraints percentWidth="14.29"/>
+	        	<ColumnConstraints percentWidth="14.29"/>
+	        	<ColumnConstraints percentWidth="14.29"/>
+	        	<ColumnConstraints percentWidth="14.29"/>
+	        	<ColumnConstraints percentWidth="14.29"/>
+	        	<ColumnConstraints percentWidth="14.29"/>
+	        	<ColumnConstraints percentWidth="14.29"/>
+	    	</columnConstraints>
+			<GridPane GridPane.columnIndex="0" GridPane.rowIndex="0" alignment="CENTER" styleClass="day-heading">
+				<Text text="Mo" styleClass="text"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="1" GridPane.rowIndex="0" alignment="CENTER" styleClass="day-heading">
+				<Text text="Tu" styleClass="text"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="2" GridPane.rowIndex="0" alignment="CENTER" styleClass="day-heading">
+				<Text text="We" styleClass="text"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="3" GridPane.rowIndex="0" alignment="CENTER" styleClass="day-heading">
+				<Text text="Th" styleClass="text"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="4" GridPane.rowIndex="0" alignment="CENTER" styleClass="day-heading">
+				<Text text="Fr" styleClass="text"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="5" GridPane.rowIndex="0" alignment="CENTER" styleClass="day-heading">
+				<Text text="Sa" styleClass="text"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="6" GridPane.rowIndex="0" alignment="CENTER" styleClass="day-heading">
+				<Text text="Su" styleClass="text"/>
+			</GridPane>
+			
+			<GridPane GridPane.columnIndex="0" GridPane.rowIndex="1" alignment="CENTER" styleClass="day">
+				<Text text="30" styleClass="otherMonth"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="1" GridPane.rowIndex="1" alignment="CENTER" styleClass="day">
+				<Text text="1" styleClass="text"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="2" GridPane.rowIndex="1" alignment="CENTER" styleClass="day">
+				<Text text="2" styleClass="text"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="3" GridPane.rowIndex="1" alignment="CENTER" styleClass="day">
+				<Text text="3" styleClass="text"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="4" GridPane.rowIndex="1" alignment="CENTER" styleClass="day">
+				<Text text="4" styleClass="text"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="5" GridPane.rowIndex="1" alignment="CENTER" styleClass="day">
+				<Text text="5" styleClass="text"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="6" GridPane.rowIndex="1" alignment="CENTER" styleClass="day">
+				<Text text="6" styleClass="text"/>
+			</GridPane>
+			
+			<GridPane GridPane.columnIndex="0" GridPane.rowIndex="2" alignment="CENTER" styleClass="day">
+				<Text text="7" styleClass="text"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="1" GridPane.rowIndex="2" alignment="CENTER" styleClass="day">
+				<Text text="8" styleClass="text"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="2" GridPane.rowIndex="2" alignment="CENTER" styleClass="day">
+				<Text text="9" styleClass="text"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="3" GridPane.rowIndex="2" alignment="CENTER" styleClass="day">
+				<Text text="10" styleClass="text"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="4" GridPane.rowIndex="2" alignment="CENTER" styleClass="day">
+				<Text text="11" styleClass="text"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="5" GridPane.rowIndex="2" alignment="CENTER" styleClass="day">
+				<Text text="12" styleClass="text"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="6" GridPane.rowIndex="2" alignment="CENTER" styleClass="day">
+				<Text text="13" styleClass="text"/>
+			</GridPane>
+			
+			<GridPane GridPane.columnIndex="0" GridPane.rowIndex="3" alignment="CENTER" styleClass="day">
+				<Text text="14" styleClass="text"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="1" GridPane.rowIndex="3" alignment="CENTER" styleClass="day">
+				<rowConstraints>
+	        		<RowConstraints percentHeight="8.33"/>
+	        		<RowConstraints percentHeight="8.33"/>
+	        		<RowConstraints percentHeight="8.33"/>
+	        		<RowConstraints percentHeight="8.33"/>
+	        		<RowConstraints percentHeight="33.33"/>
+	        		<RowConstraints percentHeight="8.33"/>
+	        		<RowConstraints percentHeight="8.33"/>
+	        		<RowConstraints percentHeight="8.33"/>
+	        		<RowConstraints percentHeight="8.33"/>
+	    		</rowConstraints>
+				<columnConstraints>
+	        		<ColumnConstraints percentWidth="100"/>
+	    		</columnConstraints>
+				<GridPane styleClass="icon-bar" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="1" GridPane.rowSpan="4" minHeight="0">
+				</GridPane>
+				
+				<GridPane GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="1" GridPane.rowSpan="1" alignment="CENTER">
+					<Text text="15" styleClass="text"/>
+				</GridPane>
+				
+				<HBox styleClass="event-box" GridPane.columnIndex="0" GridPane.rowIndex="5" GridPane.columnSpan="1" GridPane.rowSpan="4" minHeight="0" alignment="CENTER">
+					<HBox styleClass="event-btn" minHeight="20" maxHeight="20" minWidth="65" alignment="CENTER">
+						<padding>
+        					<Insets bottom="5"/>
+    					</padding>
+						<Text text="• • •" styleClass="event-dots"/>
+					</HBox>
+				</HBox>
+			</GridPane>
+			<GridPane GridPane.columnIndex="2" GridPane.rowIndex="3" alignment="CENTER" styleClass="day">
+				<rowConstraints>
+	        		<RowConstraints percentHeight="8.33"/>
+	        		<RowConstraints percentHeight="8.33"/>
+	        		<RowConstraints percentHeight="8.33"/>
+	        		<RowConstraints percentHeight="8.33"/>
+	        		<RowConstraints percentHeight="33.33"/>
+	        		<RowConstraints percentHeight="8.33"/>
+	        		<RowConstraints percentHeight="8.33"/>
+	        		<RowConstraints percentHeight="8.33"/>
+	        		<RowConstraints percentHeight="8.33"/>
+	    		</rowConstraints>
+				<columnConstraints>
+	        		<ColumnConstraints percentWidth="100"/>
+	    		</columnConstraints>
+				<GridPane styleClass="icon-bar" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="1" GridPane.rowSpan="4" minHeight="0">
+				</GridPane>
+				
+				<GridPane GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="1" GridPane.rowSpan="1" alignment="CENTER">
+					<Text text="16" styleClass="text"/>
+				</GridPane>
+				
+				<HBox styleClass="event-box" GridPane.columnIndex="0" GridPane.rowIndex="5" GridPane.columnSpan="1" GridPane.rowSpan="4" minHeight="0" alignment="CENTER">
+					<HBox styleClass="event-btn" minHeight="20" maxHeight="20" minWidth="65" alignment="CENTER">
+						<padding>
+        					<Insets bottom="5"/>
+    					</padding>
+						<Text text="• • •" styleClass="event-dots"/>
+					</HBox>
+				</HBox>
+			</GridPane>
+			<GridPane GridPane.columnIndex="3" GridPane.rowIndex="3" alignment="CENTER" styleClass="day">
+				<rowConstraints>
+	        		<RowConstraints percentHeight="8.33"/>
+	        		<RowConstraints percentHeight="8.33"/>
+	        		<RowConstraints percentHeight="8.33"/>
+	        		<RowConstraints percentHeight="8.33"/>
+	        		<RowConstraints percentHeight="33.33"/>
+	        		<RowConstraints percentHeight="8.33"/>
+	        		<RowConstraints percentHeight="8.33"/>
+	        		<RowConstraints percentHeight="8.33"/>
+	        		<RowConstraints percentHeight="8.33"/>
+	    		</rowConstraints>
+				<columnConstraints>
+	        		<ColumnConstraints percentWidth="100"/>
+	    		</columnConstraints>
+				<GridPane styleClass="icon-bar" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="1" GridPane.rowSpan="4" minHeight="0">
+				</GridPane>
+				
+				<GridPane GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="1" GridPane.rowSpan="1" alignment="CENTER">
+					<Text text="17" styleClass="text"/>
+				</GridPane>
+				
+				<HBox styleClass="event-box" GridPane.columnIndex="0" GridPane.rowIndex="5" GridPane.columnSpan="1" GridPane.rowSpan="4" minHeight="0" alignment="CENTER">
+					<HBox styleClass="event-btn" minHeight="20" maxHeight="20" minWidth="65" alignment="CENTER">
+						<padding>
+        					<Insets bottom="5"/>
+    					</padding>
+						<Text text="• • •" styleClass="event-dots"/>
+					</HBox>
+				</HBox>
+			</GridPane>
+			<GridPane GridPane.columnIndex="4" GridPane.rowIndex="3" alignment="CENTER" styleClass="day">
+				<Text text="18" styleClass="text"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="5" GridPane.rowIndex="3" alignment="CENTER" styleClass="today">
+				<Text text="19" styleClass="text"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="6" GridPane.rowIndex="3" alignment="CENTER" styleClass="day">
+				<Text text="20" styleClass="text"/>
+			</GridPane>
+			
+			<GridPane GridPane.columnIndex="0" GridPane.rowIndex="4" alignment="CENTER" styleClass="day">
+				<rowConstraints>
+	        		<RowConstraints percentHeight="8.33"/>
+	        		<RowConstraints percentHeight="8.33"/>
+	        		<RowConstraints percentHeight="8.33"/>
+	        		<RowConstraints percentHeight="8.33"/>
+	        		<RowConstraints percentHeight="33.33"/>
+	        		<RowConstraints percentHeight="8.33"/>
+	        		<RowConstraints percentHeight="8.33"/>
+	        		<RowConstraints percentHeight="8.33"/>
+	        		<RowConstraints percentHeight="8.33"/>
+	    		</rowConstraints>
+				<columnConstraints>
+	        		<ColumnConstraints percentWidth="100"/>
+	    		</columnConstraints>
+				<GridPane styleClass="icon-bar" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="5" GridPane.rowSpan="4" minHeight="0">
+				</GridPane>
+				
+				<GridPane GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="1" GridPane.rowSpan="1" alignment="CENTER">
+					<Text text="21" styleClass="text"/>
+				</GridPane>
+				
+				<HBox styleClass="event-box" GridPane.columnIndex="0" GridPane.rowIndex="5" GridPane.columnSpan="5" GridPane.rowSpan="4" minHeight="0" alignment="CENTER">
+					<HBox styleClass="event-btn" minHeight="20" maxHeight="20" minWidth="65" alignment="CENTER">
+						<padding>
+        					<Insets bottom="5"/>
+    					</padding>
+						<Text text="• • •" styleClass="event-dots"/>
+					</HBox>
+				</HBox>
+			</GridPane>
+			<GridPane GridPane.columnIndex="1" GridPane.rowIndex="4" alignment="CENTER" styleClass="day">
+				<Text text="22" styleClass="text"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="2" GridPane.rowIndex="4" alignment="CENTER" styleClass="day">
+				<Text text="23" styleClass="text"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="3" GridPane.rowIndex="4" alignment="CENTER" styleClass="day">
+				<Text text="24" styleClass="text"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="4" GridPane.rowIndex="4" alignment="CENTER" styleClass="day">
+				<Text text="25" styleClass="text"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="5" GridPane.rowIndex="4" alignment="CENTER" styleClass="day">
+				<Text text="26" styleClass="text"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="6" GridPane.rowIndex="4" alignment="CENTER" styleClass="day">
+				<Text text="27" styleClass="text"/>
+			</GridPane>
+			
+			<GridPane GridPane.columnIndex="0" GridPane.rowIndex="5" alignment="CENTER" styleClass="day">
+				<Text text="28" styleClass="text"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="1" GridPane.rowIndex="5" alignment="CENTER" styleClass="day">
+				<Text text="29" styleClass="text"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="2" GridPane.rowIndex="5" alignment="CENTER" styleClass="day">
+				<Text text="30" styleClass="text"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="3" GridPane.rowIndex="5" alignment="CENTER" styleClass="day">
+				<Text text="31" styleClass="text"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="4" GridPane.rowIndex="5" alignment="CENTER" styleClass="day">
+				<Text text="1" styleClass="otherMonth"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="5" GridPane.rowIndex="5" alignment="CENTER" styleClass="day">
+				<Text text="2" styleClass="otherMonth"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="6" GridPane.rowIndex="5" alignment="CENTER" styleClass="day">
+				<Text text="3" styleClass="otherMonth"/>
+			</GridPane>
+			
+			<GridPane GridPane.columnIndex="0" GridPane.rowIndex="6" alignment="CENTER" styleClass="day">
+				<Text text="4" styleClass="otherMonth"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="1" GridPane.rowIndex="6" alignment="CENTER" styleClass="day">
+				<Text text="5" styleClass="otherMonth"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="2" GridPane.rowIndex="6" alignment="CENTER" styleClass="day">
+				<Text text="6" styleClass="otherMonth"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="3" GridPane.rowIndex="6" alignment="CENTER" styleClass="day">
+				<Text text="7" styleClass="otherMonth"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="4" GridPane.rowIndex="6" alignment="CENTER" styleClass="day">
+				<Text text="8" styleClass="otherMonth"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="5" GridPane.rowIndex="6" alignment="CENTER" styleClass="day">
+				<Text text="9" styleClass="otherMonth"/>
+			</GridPane>
+			<GridPane GridPane.columnIndex="6" GridPane.rowIndex="6" alignment="CENTER" styleClass="day">
+				<Text text="10" styleClass="otherMonth"/>
+			</GridPane>
+		</GridPane>
+</GridPane>
+

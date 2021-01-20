@@ -1,0 +1,164 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+.root {
+	-fx-background-color: #525252;
+}
+
+.text {
+	-fx-font-size: 25px;
+	-fx-fill: white;
+}
+
+/* MONTH WIDGET AND BUTTONS */
+.month-box {
+
+}
+
+.month-text {
+	-fx-font-size: 30px;
+	-fx-fill: white;
+}
+
+.cycle-box {
+
+}
+
+.cycle-btn {
+
+}
+
+.cycle-text {
+	-fx-font-size: 30px;
+	-fx-fill: #727272;
+}
+
+.cycle-btn:hover {
+	-fx-cursor: HAND;
+}
+
+.cycle-btn:hover .cycle-text {
+	-fx-fill: lightgray;
+}
+
+
+/* TOOLBAR AND BUTTONS */
+.toolbar {
+
+}
+
+.toolbar:hover {
+	-fx-cursor: MOVE;
+}
+
+.add-btn {
+
+}
+
+.settings-btn {
+
+}
+
+.help-btn {
+
+}
+
+.add-btn:hover, .settings-btn:hover, .help-btn:hover {
+	-fx-cursor: HAND;
+}
+
+.exit-box {
+	-fx-cursor: MOVE;
+}
+
+.exit-btn-text {
+	-fx-fill: #727272;
+	-fx-font-size: 20px;
+}
+
+.exit-btn:hover, .exit-btn:hover .exit-btn-text {
+	-fx-background-color: #626262;
+	-fx-fill: lightgray;
+	-fx-cursor: HAND;
+}
+
+.exit-btn:pressed, .exit-btn:pressed .exit-btn-text {
+	-fx-background-color: #727272;
+	-fx-fill: white;
+}
+
+
+/* WEEKDAYS AT TOP OF CALENDAR */
+.day-heading {
+	-fx-border-style: solid hidden hidden hidden;
+    -fx-border-width: 1;
+    -fx-border-color: #727272;
+}
+
+/* GRAYED OUT DAYS BELONGING TO PREV AND NEXT MONTH */
+.otherMonth {
+	-fx-font-size: 25px;
+	-fx-fill: #a3a3a3;
+}
+
+
+/* CURRENT DAY */
+.today {
+	-fx-border-color: gray;
+    -fx-border-width: 5;
+}
+
+.day {
+	
+}
+
+.day:hover, .today:hover {
+	-fx-background-color: #626262;
+}
+
+.day:hover .event-dots {
+	-fx-fill: gray;
+}
+
+.event-box {
+	
+}
+
+.event-btn:hover, .event-btn:hover .event-dots {
+	-fx-background-color: #727272;
+	-fx-fill: lightgray;
+	-fx-cursor: HAND;
+}
+
+.event-btn:pressed, .event-btn:pressed .event-dots {
+	-fx-fill: white;
+	-fx-background-color: #828282;
+}
+
+.event-btn {
+	-fx-background-radius: 10;
+}
+
+.event-dots {
+	-fx-font-size: 30px;
+	-fx-fill: #646464;
+}
+
+.icon-bar {
+	
+}
+
+.one {
+	-fx-background-color: cyan;
+}
+
+.two {
+	
+}
+
+.three {
+	-fx-background-color: yellow;
+}
+
+.four {
+	-fx-background-color: pink;
+}
