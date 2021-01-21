@@ -47,8 +47,8 @@ public class LCalendar {
 		nextMonth = currentMonth;
 		currentMonth = prevMonth;
 		prevMonth = new MonthArray(
-				prevMonth.getMonth() == 0 ? prevMonth.getYear() - 1 : prevMonth.getYear(),
-				prevMonth.getMonth() == 0 ? 11 : prevMonth.getMonth() - 1
+			prevMonth.getMonth() == 0 ? prevMonth.getYear() - 1 : prevMonth.getYear(),
+			prevMonth.getMonth() == 0 ? 11 : prevMonth.getMonth() - 1
 		);
 		
 		return currentMonth;
@@ -58,8 +58,8 @@ public class LCalendar {
 		prevMonth = currentMonth;
 		currentMonth = nextMonth;
 		nextMonth = new MonthArray(
-				nextMonth.getMonth() == 11 ? nextMonth.getYear() + 1 : nextMonth.getYear(),
-				nextMonth.getMonth() == 11 ? 0 : nextMonth.getMonth() + 1
+			nextMonth.getMonth() == 11 ? nextMonth.getYear() + 1 : nextMonth.getYear(),
+			nextMonth.getMonth() == 11 ? 0 : nextMonth.getMonth() + 1
 		);
 
 		return currentMonth;
