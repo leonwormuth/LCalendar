@@ -1,5 +1,6 @@
 package lcalendar;
 
+import java.util.Arrays;
 import java.util.Calendar;
 
 public class MonthArray {
@@ -13,16 +14,24 @@ public class MonthArray {
 	public MonthArray(int yr, int mth) {
 		year = yr;
 		month = mth;
-		int days = determineDays(month);
 		
 		Calendar c = Calendar.getInstance();
 		c.set(year, month, 1);
+		
+		int days = determineDays(month);
+		if (isLeapYear(c) && month == 1) days += 1;
 		
 		//set indices of first and last day in the month array
 		firstDay = LCalendar.convertWeekday(c.get(Calendar.DAY_OF_WEEK) - 1) + 7;
 		lastDay = firstDay + days - 1;
 		
-		//TODO populate the array based on first day, last day, and whatever month comes before and after
+		int date = 1;
+		for (int i = firstDay; i < lastDay + 1; i++) {
+			arr[i] = date;
+			date++;
+		}
+		
+		//TODO populate days falling outside the range of the current month
 	}
 	
 	public int getFirst() {
@@ -45,7 +54,11 @@ public class MonthArray {
 		return arr;
 	}
 	
-	private int determineDays(int month) {
+	public static boolean isLeapYear(Calendar c) { //ref https://stackoverflow.com/a/1021373/13178460
+		return c.getActualMaximum(Calendar.DAY_OF_YEAR) > 365;
+	}
+	
+	public int determineDays(int month) {
 		int days;
 		
 		if (month < 0 || month > 11) throw new IndexOutOfBoundsException(); 
@@ -53,6 +66,7 @@ public class MonthArray {
 		switch (month) {
 			case 1:
 				days = 28;
+				break;
 			case 8:
 				days = 30;
 				break;
