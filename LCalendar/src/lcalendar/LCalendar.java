@@ -33,13 +33,14 @@ public class LCalendar {
 	private int convertWeekday(int i) { //to convert Calendar.DAY_OF_WEEK to 0 index and Mon-Sun format
 		int day;
 		
-		switch (i) {
-			case 1:
-				day = 6;
-				break;
-			default:
-				day = i - 1;
+		if (i < 0 || i > 6) throw new IndexOutOfBoundsException();
+		
+		if (i == 6) {
+			day = 6;
+		} else {
+			day = i - 1;
 		}
+		
 		return day;
 	}
 	
