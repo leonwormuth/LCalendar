@@ -1,5 +1,7 @@
 package lcalendar;
 
+import java.util.Calendar;
+
 public class MonthArray {
 
 	private int firstDay;
@@ -11,6 +13,15 @@ public class MonthArray {
 	public MonthArray(int yr, int mth) {
 		year = yr;
 		month = mth;
+		int days = determineDays(month);
+		
+		Calendar c = Calendar.getInstance();
+		c.set(year, month, 1);
+		
+		//set indices of first and last day in the month array
+		firstDay = LCalendar.convertWeekday(c.get(Calendar.DAY_OF_WEEK) - 1) + 7;
+		lastDay = firstDay + days - 1;
+		
 		//populate the array and private variables with integers based on the weekdays of that month in that year
 	}
 	
@@ -32,5 +43,33 @@ public class MonthArray {
 	
 	public int[] getArray() {
 		return arr;
+	}
+	
+	private int determineDays(int month) {
+		int days;
+		
+		if (month < 0 || month > 11) throw new IndexOutOfBoundsException(); 
+		
+		switch (month) {
+			case 1:
+				days = 28;
+			case 8:
+				days = 30;
+				break;
+			case 3:
+				days = 30;
+				break;
+			case 5:
+				days = 30;
+				break;
+			case 10:
+				days = 30;
+				break;
+			default:
+				days = 31;
+				break;
+		}
+		
+		return days;
 	}
 }
