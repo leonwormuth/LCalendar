@@ -22,7 +22,7 @@ public class MonthArray {
 		firstDay = LCalendar.convertWeekday(c.get(Calendar.DAY_OF_WEEK) - 1) + 7;
 		lastDay = firstDay + days - 1;
 		
-		//populate the array and private variables with integers based on the weekdays of that month in that year
+		//TODO populate the array based on first day, last day, and whatever month comes before and after
 	}
 	
 	public int getFirst() {
