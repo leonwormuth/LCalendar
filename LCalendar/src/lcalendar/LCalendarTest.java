@@ -33,6 +33,14 @@ class LCalendarTest {
 	}
 	
 	@Test
+	void determineDaysTest() {
+		LCalendar cal = new LCalendar();
+		MonthArray m = cal.now();
+		int result = m.determineDays(1);
+		assertEquals(28, result);
+	}
+	
+	@Test
 	void prevMonthTest() {
 		LCalendar cal = new LCalendar();
 		MonthArray m = cal.prevMonth();
