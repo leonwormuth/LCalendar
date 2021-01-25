@@ -30,12 +30,12 @@ public class LCalendar {
 		nextMonth = new MonthArray(month == 11 ? year + 1 : year, month == 11 ? 0 : month + 1);
 	}
 	
-	private int convertWeekday(int i) { //to convert Calendar.DAY_OF_WEEK to 0 index and Mon-Sun format
+	public static int convertWeekday(int i) { //to convert Calendar.DAY_OF_WEEK to 0 index and Mon-Sun format
 		int day;
 		
 		if (i < 0 || i > 6) throw new IndexOutOfBoundsException();
 		
-		if (i == 6) {
+		if (i == 0) {
 			day = 6;
 		} else {
 			day = i - 1;
