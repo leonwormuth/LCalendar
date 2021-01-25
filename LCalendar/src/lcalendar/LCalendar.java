@@ -9,9 +9,9 @@ public class LCalendar {
 	private int month;
 	private int year;
 	private int weekday;
-	private MonthArray prevMonth;
-	private MonthArray currentMonth;
-	private MonthArray nextMonth;
+	private MonthArray prevMonth; //points to previous month
+	private MonthArray currentMonth; //points to the current month being displayed on the calendar
+	private MonthArray nextMonth; //points to next month
 		
 	public LCalendar() {
 		init();
