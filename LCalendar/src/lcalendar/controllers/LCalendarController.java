@@ -31,8 +31,7 @@ public class LCalendarController {
     @FXML protected ImageView settingsBtnImage;
     @FXML protected ImageView helpBtnImage;
     @FXML protected GridPane monthGrid;
-    
-    private ColorAdjust pressAdjust = new ColorAdjust();
+
     
     //allow stage to be passed to controller, ref https://stackoverflow.com/questions/10751271/accessing-fxml-controller-class
     public void setStage(Stage stage) {
@@ -90,8 +89,8 @@ public class LCalendarController {
 	
 	@FXML
 	protected void handleButtonPress(MouseEvent event) {
-		ColorAdjust hoverAdjust = new ColorAdjust();
-		hoverAdjust.setBrightness(PRESS_BRIGHTNESS);
+		ColorAdjust pressAdjust = new ColorAdjust();
+		pressAdjust.setBrightness(PRESS_BRIGHTNESS);
 		
 		ImageView imageView;
 		
@@ -101,13 +100,13 @@ public class LCalendarController {
 		} else {
 			imageView = (ImageView)event.getTarget();
 		}
-	    imageView.setEffect(hoverAdjust);
+	    imageView.setEffect(pressAdjust);
 	}
 	
 	@FXML
 	protected void handleButtonRelease(MouseEvent event) {
-		ColorAdjust hoverAdjust = new ColorAdjust();
-	    hoverAdjust.setBrightness(HOVER_BRIGHTNESS);
+		ColorAdjust pressAdjust = new ColorAdjust();
+		pressAdjust.setBrightness(HOVER_BRIGHTNESS);
 
 		ImageView imageView;
 		
@@ -117,6 +116,6 @@ public class LCalendarController {
 		} else {
 			imageView = (ImageView)event.getTarget();
 		}
-	    imageView.setEffect(hoverAdjust);
+	    imageView.setEffect(pressAdjust);
 	}
 }
