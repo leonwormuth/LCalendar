@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -29,6 +30,7 @@ public class LCalendarController {
     @FXML protected ImageView addBtnImage;
     @FXML protected ImageView settingsBtnImage;
     @FXML protected ImageView helpBtnImage;
+    @FXML protected GridPane monthGrid;
     
     private ColorAdjust pressAdjust = new ColorAdjust();
     
@@ -43,6 +45,10 @@ public class LCalendarController {
     
     public void update() {
     	//draw the stored MonthArray onto the calendar
+    	
+    	//traverse through monthArray and use the mod operator to get coordinates for where each item should go
+    	//use an id lookup to select a certain day box in the calendar gridpane
+    	//fill the text element in that day box with the value in the monthArray
     }
 
 	@FXML
