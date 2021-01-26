@@ -72,7 +72,7 @@
 	    		<Text styleClass="exit-btn-text">⨉</Text>
 	    	</HBox>
 	    </HBox>
-		<GridPane alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.columnSpan="7">
+		<GridPane -fx-id="monthGrid" alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="1" GridPane.halignment="CENTER" GridPane.columnSpan="7">
 			<rowConstraints>
 	        	<RowConstraints percentHeight="14.29"/>
 	        	<RowConstraints percentHeight="14.29"/>
