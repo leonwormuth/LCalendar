@@ -25,13 +25,26 @@ public class MonthArray {
 		firstDay = LCalendar.convertWeekday(c.get(Calendar.DAY_OF_WEEK) - 1) + 7;
 		lastDay = firstDay + days - 1;
 		
+		//populate the month being displayed
 		int date = 1;
 		for (int i = firstDay; i < lastDay + 1; i++) {
 			arr[i] = date;
 			date++;
 		}
 		
-		//TODO populate days falling outside the range of the current month
+		//populate the grey days at the start of the calendar
+		date = determineDays(month == 0 ? 11 : month - 1) - firstDay + 1;
+		for (int i = 0; i < firstDay; i++) {
+			arr[i] = date;
+			date++;
+		}
+		
+		//populate the grey days at the end of the calendar
+		date = 1;
+		for (int i = lastDay + 1; i < arr.length; i++) {
+			arr[i] = date;
+			date++;
+		}
 	}
 	
 	public int getFirst() {
