@@ -8,6 +8,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import lcalendar.LCalendar;
+import lcalendar.MonthArray;
 
 public class LCalendarController {
 	
@@ -19,6 +20,7 @@ public class LCalendarController {
     
     private Stage primaryStage;
     private LCalendar cal = new LCalendar();
+    private MonthArray monthArray;
     
     @FXML protected HBox toolbar;
     @FXML protected HBox addBtn;
@@ -36,7 +38,7 @@ public class LCalendarController {
     }
     
     public void initCalendar() {
-    	//basically just call calendar.now() and store it in a local MonthArray
+    	monthArray = cal.now();
     }
     
     public void update() {
