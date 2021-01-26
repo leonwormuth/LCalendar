@@ -7,6 +7,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import lcalendar.LCalendar;
 
 public class LCalendarController {
 	
@@ -17,6 +18,7 @@ public class LCalendarController {
     private double yOffset = 0;
     
     private Stage primaryStage;
+    private LCalendar cal = new LCalendar();
     
     @FXML protected HBox toolbar;
     @FXML protected HBox addBtn;
@@ -31,6 +33,14 @@ public class LCalendarController {
     //allow stage to be passed to controller, ref https://stackoverflow.com/questions/10751271/accessing-fxml-controller-class
     public void setStage(Stage stage) {
     	this.primaryStage = stage;
+    }
+    
+    public void initCalendar() {
+    	//basically just call calendar.now() and store it in a local MonthArray
+    }
+    
+    public void update() {
+    	//draw the stored MonthArray onto the calendar
     }
 
 	@FXML
