@@ -48,6 +48,11 @@ public class LCalendarController {
     	//use an id lookup to select a certain day box in the calendar gridpane
     	//fill the text element in that day box with the value in the monthArray
     }
+    
+    private void clearCalendar() {
+    	//clear all children of monthGrid
+    	//re-insert grid constraint nodes
+    }
 
 	@FXML
 	protected void handleExitAction(MouseEvent event) {
