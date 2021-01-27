@@ -32,9 +32,10 @@ public class MonthArray {
 			date++;
 		}
 		
-		//populate the grey days at the start of the calendar
-		date = determineDays(month == 0 ? 11 : month - 1) - firstDay + 1;
-		for (int i = 0; i < firstDay; i++) {
+		//populate the grey days at the start of the calendar, but skip the first 7 entries in the array
+		//(those 7 correspond to the Mo, Tu, Wed etc. day headings)
+		date = determineDays(month == 0 ? 11 : month - 1) - firstDay + 8; //determine starting day
+		for (int i = 7; i < firstDay; i++) {
 			arr[i] = date;
 			date++;
 		}
