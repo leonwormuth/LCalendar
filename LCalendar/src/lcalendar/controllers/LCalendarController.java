@@ -44,9 +44,8 @@ public class LCalendarController {
     public void update() {
     	//draw the stored MonthArray onto the calendar
     	
-    	//traverse through monthArray and use the mod operator to get coordinates for where each item should go
-    	//use an id lookup to select a certain day box in the calendar gridpane
-    	//fill the text element in that day box with the value in the monthArray
+    	//traverse through monthArray and generate a day box for each item
+    	//place each item in the grid
     }
     
     private void clearCalendar() {
