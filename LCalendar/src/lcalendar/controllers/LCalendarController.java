@@ -42,13 +42,14 @@ public class LCalendarController {
     }
     
     public void update() {
-    	//draw the stored MonthArray onto the calendar
+    	clearCalendar();
     	
     	//traverse through monthArray and generate a day box for each item
     	//place each item in the grid
     }
     
     private void clearCalendar() {
+    	
     	//clear all children of monthGrid
     	//re-insert grid constraint nodes
     }
