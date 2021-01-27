@@ -49,6 +49,11 @@ public class Main extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("LCalendar");
 			primaryStage.initStyle(StageStyle.TRANSPARENT);
+			
+			//populate the calendar with days and values
+			controller.initCalendar();
+			controller.update();
+			
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();
