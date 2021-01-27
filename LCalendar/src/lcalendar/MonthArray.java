@@ -72,7 +72,7 @@ public class MonthArray {
 		return c.getActualMaximum(Calendar.DAY_OF_YEAR) > 365;
 	}
 	
-	public int determineDays(int month) {
+	public int determineDays(int month) { //returns the number of days in the specified month, leap years must be accounted for externally
 		int days;
 		
 		if (month < 0 || month > 11) throw new IndexOutOfBoundsException(); 
