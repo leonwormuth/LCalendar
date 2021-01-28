@@ -47,25 +47,11 @@ public class LCalendarController {
     
     public void update() {
     	clearCalendar();
-    	
-    	//traverse through monthArray and generate a day box for each item
-    	//place each item in the grid
+    	drawCalendar();
     }
     
     private void clearCalendar() {
-    	monthGrid.getChildren().removeAll();
-    	
-    	for (int i = 0; i < 7; i++) {
-    		RowConstraints r = new RowConstraints();
-            r.setPercentHeight(14.29);
-            monthGrid.getRowConstraints().add(r);
-    	}
-    	
-    	for (int i = 0; i < 7; i++) {
-    		ColumnConstraints r = new ColumnConstraints();
-            r.setPercentWidth(14.29);
-            monthGrid.getColumnConstraints().add(r);
-    	}
+    	monthGrid.getChildren().clear();
     	
     	String[] days = new String[] {"Mo","Tu","We","Th","Fr","Sa","Su"};
     	for (int i = 0; i < 7; i++) {
@@ -73,22 +59,43 @@ public class LCalendarController {
         	g.getStyleClass().clear();
         	g.getStyleClass().add("day-heading");
         	g.setAlignment(Pos.CENTER);
+        	GridPane.setConstraints(g, i, 0);
+        	
         	Text t = new Text();
         	t.setText(days[i]);
         	t.getStyleClass().clear();
         	t.getStyleClass().add("text");
+        	
         	monthGrid.getChildren().add(g);
         	g.getChildren().add(t);
     	}
     }
     
     private void drawCalendar() {
-    	
-    	
-    	for (int i = 7; i < monthArray.getFirst(); i++) {
+    	for (int i = 7; i < monthArray.getArray().length; i++) {
     		GridPane g = new GridPane();
-    		
+    		g.getStyleClass().clear();
+        	g.getStyleClass().add("day");
+        	g.setAlignment(Pos.CENTER);
+        	GridPane.setConstraints(g, i%7, i/7);
+        	
+        	Text t = new Text();
+        	t.setText(Integer.toString(monthArray.getArray()[i]));
+        	t.getStyleClass().clear();
+        	
+        	String textStyle;
+        	if (i < monthArray.getFirst() || i > monthArray.getLast()) {
+        		textStyle = "other-month";
+        	} else {
+        		textStyle = "text";
+        	}
+        	t.getStyleClass().add(textStyle);
+        	
+        	monthGrid.getChildren().add(g);
+        	g.getChildren().add(t);
     	}
+    	System.out.println(monthGrid.getRowConstraints());
+    	System.out.println(monthGrid.getColumnConstraints());
     }
 
 	@FXML
