@@ -34,6 +34,7 @@ public class LCalendarController {
     @FXML protected ImageView settingsBtnImage;
     @FXML protected ImageView helpBtnImage;
     @FXML protected GridPane monthGrid;
+    @FXML protected Text monthText;
 
     
     //allow stage to be passed to controller, ref https://stackoverflow.com/questions/10751271/accessing-fxml-controller-class
@@ -48,6 +49,7 @@ public class LCalendarController {
     public void update() {
     	clearCalendar();
     	drawCalendar();
+    	setHeading();
     }
     
     private void clearCalendar() {
@@ -96,6 +98,52 @@ public class LCalendarController {
     	}
     	System.out.println(monthGrid.getRowConstraints());
     	System.out.println(monthGrid.getColumnConstraints());
+    }
+    
+    private void setHeading() {
+    	String m;
+    	
+    	switch (monthArray.getMonth()) {
+    		case 0:
+    			m = "January";
+    			break;
+    		case 1:
+    			m = "February";
+    			break;
+    		case 2:
+    			m = "March";
+    			break;
+    		case 3:
+    			m = "April";
+    			break;
+    		case 4:
+    			m = "May";
+    			break;
+    		case 5:
+    			m = "June";
+    			break;
+    		case 6:
+    			m = "July";
+    			break;
+    		case 7:
+    			m = "August";
+    			break;
+    		case 8:
+    			m = "September";
+    			break;
+    		case 9:
+    			m = "October";
+    			break;
+    		case 10:
+    			m = "November";
+    			break;
+    		case 11:
+    			m = "December";
+    			break;
+    		default:
+    			m = "Unknown";
+    	}
+    	monthText.setText(m + " " + monthArray.getYear());
     }
 
 	@FXML
