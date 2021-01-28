@@ -4,8 +4,10 @@ import javafx.fxml.FXML;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.RowConstraints;
 import javafx.stage.Stage;
 import lcalendar.LCalendar;
 import lcalendar.MonthArray;
@@ -49,9 +51,19 @@ public class LCalendarController {
     }
     
     private void clearCalendar() {
+    	monthGrid.getChildren().removeAll();
     	
-    	//clear all children of monthGrid
-    	//re-insert grid constraint nodes
+    	for (int i = 0; i < 7; i++) {
+    		RowConstraints r = new RowConstraints();
+            r.setPercentHeight(14.29);
+            monthGrid.getRowConstraints().add(r);
+    	}
+    	
+    	for (int i = 0; i < 7; i++) {
+    		ColumnConstraints r = new ColumnConstraints();
+            r.setPercentWidth(14.29);
+            monthGrid.getColumnConstraints().add(r);
+    	}
     }
 
 	@FXML
