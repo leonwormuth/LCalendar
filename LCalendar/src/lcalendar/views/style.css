@@ -95,7 +95,7 @@
 }
 
 /* GRAYED OUT DAYS BELONGING TO PREV AND NEXT MONTH */
-.otherMonth {
+.other-month {
 	-fx-font-size: 25px;
 	-fx-fill: #a3a3a3;
 }
