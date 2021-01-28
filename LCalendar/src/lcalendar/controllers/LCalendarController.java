@@ -150,6 +150,18 @@ public class LCalendarController {
 	protected void handleExitAction(MouseEvent event) {
 		System.exit(0);
 	}
+    
+    @FXML
+    protected void handlePrevAction(MouseEvent event) {
+    	monthArray = cal.prevMonth();
+    	update();
+    }
+	
+    @FXML
+    protected void handleNextAction(MouseEvent event) {
+    	monthArray = cal.nextMonth();
+    	update();
+    }
 	
 	@FXML
 	protected void handleToolbarPress(MouseEvent event) {

@@ -34,10 +34,10 @@
 	    	<Text fx:id="monthText" styleClass="month-text">December 2020</Text>
 	    </HBox>
 	    <HBox styleClass="cycle-box" alignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="0">
-	    	<HBox styleClass="cycle-btn" alignment="CENTER" minWidth="40" minHeight="40" maxWidth="40" maxHeight="40">
+	    	<HBox styleClass="cycle-btn" alignment="CENTER" minWidth="40" minHeight="40" maxWidth="40" maxHeight="40" onMouseClicked="#handlePrevAction">
 	    		<Text styleClass="cycle-text">❮</Text>
 	    	</HBox>
-	    	<HBox styleClass="cycle-btn" alignment="CENTER" minWidth="40" minHeight="40" maxWidth="40" maxHeight="40">
+	    	<HBox styleClass="cycle-btn" alignment="CENTER" minWidth="40" minHeight="40" maxWidth="40" maxHeight="40" onMouseClicked="#handleNextAction">
 	    		<Text styleClass="cycle-text">❯</Text>
 	    	</HBox>
 	    </HBox>
