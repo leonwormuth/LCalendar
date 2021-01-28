@@ -96,8 +96,6 @@ public class LCalendarController {
         	monthGrid.getChildren().add(g);
         	g.getChildren().add(t);
     	}
-    	System.out.println(monthGrid.getRowConstraints());
-    	System.out.println(monthGrid.getColumnConstraints());
     }
     
     private void setHeading() {
