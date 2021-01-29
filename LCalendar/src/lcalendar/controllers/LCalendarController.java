@@ -74,10 +74,11 @@ public class LCalendarController {
     }
     
     private void drawCalendar() {
+		int today = cal.getDay();
+		
     	for (int i = 7; i < monthArray.getArray().length; i++) {
     		GridPane g = new GridPane();
     		g.getStyleClass().clear();
-        	g.getStyleClass().add("day");
         	g.setAlignment(Pos.CENTER);
         	GridPane.setConstraints(g, i%7, i/7);
         	
@@ -89,8 +90,9 @@ public class LCalendarController {
         	if (i < monthArray.getFirst() || i > monthArray.getLast()) {
         		textStyle = "other-month";
         	} else {
+        		g.getStyleClass().add(monthArray.getArray()[i] == today ? "today" : "day");
         		textStyle = "text";
-        	}
+        	}			
         	t.getStyleClass().add(textStyle);
         	
         	monthGrid.getChildren().add(g);
