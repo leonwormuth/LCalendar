@@ -5,10 +5,10 @@ import java.util.Calendar;
 
 public class LCalendar {
 
-	private int day;
-	private int month;
-	private int year;
-	private int weekday;
+	private int day; //today's date
+	private int month; //today's month
+	private int year; //today's year
+	private int weekday; //today's weekday
 	private MonthArray prevMonth; //points to previous month
 	private MonthArray currentMonth; //points to the current month being displayed on the calendar
 	private MonthArray nextMonth; //points to next month
