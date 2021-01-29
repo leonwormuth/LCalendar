@@ -71,6 +71,10 @@ public class LCalendar {
 		return currentMonth;
 	}
 	
+	public int getMonth() {
+		return month;
+	}
+	
 	public int getDay() {
 		System.out.println(day);
 		return day;
