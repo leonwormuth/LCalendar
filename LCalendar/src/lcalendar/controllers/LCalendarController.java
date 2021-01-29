@@ -90,7 +90,10 @@ public class LCalendarController {
         	if (i < monthArray.getFirst() || i > monthArray.getLast()) {
         		textStyle = "other-month";
         	} else {
-        		g.getStyleClass().add(monthArray.getArray()[i] == today ? "today" : "day");
+        		g.getStyleClass().add(
+        				//if the current box being generated is the current month day and is in the current month
+        				monthArray.getArray()[i] == today && monthArray.getMonth() == cal.getMonth() ? "today" : "day"
+        		);
         		textStyle = "text";
         	}			
         	t.getStyleClass().add(textStyle);
