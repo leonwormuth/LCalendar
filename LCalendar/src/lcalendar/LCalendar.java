@@ -70,4 +70,9 @@ public class LCalendar {
 		init();
 		return currentMonth;
 	}
+	
+	public int getDay() {
+		System.out.println(day);
+		return day;
+	}
 }
