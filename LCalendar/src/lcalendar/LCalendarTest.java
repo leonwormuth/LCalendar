@@ -19,7 +19,6 @@ class LCalendarTest {
 		LCalendar cal = new LCalendar();
 		MonthArray m = cal.now();
 		int result = m.getFirst();
-		System.out.println(result);
 		assertEquals(11, result);
 	}
 	
@@ -28,7 +27,6 @@ class LCalendarTest {
 		LCalendar cal = new LCalendar();
 		MonthArray m = cal.now();
 		int result = m.getLast();
-		System.out.println(result);
 		assertEquals(41, result);
 	}
 	
