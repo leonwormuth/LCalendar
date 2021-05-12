@@ -4,6 +4,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import lcalendar.models.LCalendar;
+import lcalendar.models.MonthArray;
+
 class LCalendarTest {
 	
 	@Test

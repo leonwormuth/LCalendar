@@ -5,14 +5,12 @@ import javafx.geometry.Pos;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.RowConstraints;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import lcalendar.LCalendar;
-import lcalendar.MonthArray;
+import lcalendar.models.LCalendar;
+import lcalendar.models.MonthArray;
 
 public class LCalendarController {
 	
@@ -91,7 +89,7 @@ public class LCalendarController {
         		textStyle = "other-month";
         	} else {
         		g.getStyleClass().add(
-        				//if the current box being generated is the current month day and is in the current month
+        				//check if the current box being generated is today
         				monthArray.getArray()[i] == today && monthArray.getMonth() == cal.getMonth() ? "today" : "day"
         		);
         		textStyle = "text";
