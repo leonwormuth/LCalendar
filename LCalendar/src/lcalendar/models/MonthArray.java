@@ -79,24 +79,24 @@ public class MonthArray {
         if (month < 0 || month > 11) throw new IndexOutOfBoundsException(); 
 		
         switch (month) {
-		    case 1:
-		        days = 28;
-		        break;
-		    case 8:
-		        days = 30;
-		        break;
-		    case 3:
-		        days = 30;
-		        break;
-		    case 5:
-		        days = 30;
-		        break;
-		    case 10:
-		        days = 30;
-		        break;
-		    default:
-		        days = 31;
-		        break;
+            case 1:
+                days = 28;
+                break;
+            case 8:
+                days = 30;
+                break;
+            case 3:
+                days = 30;
+                break;
+            case 5:
+                days = 30;
+                break;
+            case 10:
+                days = 30;
+                break;
+            default:
+                days = 31;
+                break;
         }
 		
         return days;
