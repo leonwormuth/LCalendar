@@ -1,4 +1,4 @@
-package lcalendar;
+package lcalendar.models;
 
 import java.util.Arrays;
 import java.util.Calendar;
@@ -9,7 +9,7 @@ public class MonthArray {
 	private int lastDay;
 	private int month;
 	private int year;
-	private int arr[] = new int[49]; //size mirrors the grid in the app's interface - meaning the first 7 slots will never be used
+	private int arr[] = new int[49];
 	
 	public MonthArray(int yr, int mth) {
 		year = yr;
@@ -72,7 +72,8 @@ public class MonthArray {
 		return c.getActualMaximum(Calendar.DAY_OF_YEAR) > 365;
 	}
 	
-	public int determineDays(int month) { //returns the number of days in the specified month, leap years must be accounted for externally
+	//returns the number of days in the specified month, leap years must be accounted for externally
+	public int determineDays(int month) { 
 		int days;
 		
 		if (month < 0 || month > 11) throw new IndexOutOfBoundsException(); 

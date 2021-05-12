@@ -1,4 +1,4 @@
-package lcalendar;
+package lcalendar.models;
 
 import java.util.Date;
 import java.util.Calendar;
@@ -9,16 +9,16 @@ public class LCalendar {
 	private int month; //today's month
 	private int year; //today's year
 	private int weekday; //today's weekday
-	private MonthArray prevMonth; //points to previous month
-	private MonthArray currentMonth; //points to the current month being displayed on the calendar
-	private MonthArray nextMonth; //points to next month
+	private MonthArray prevMonth; //represents the previous month
+	private MonthArray currentMonth; //represents the current month being displayed on the calendar
+	private MonthArray nextMonth; //represents the next month
 		
 	public LCalendar() {
 		init();
 	}
 	
+	//populate current, prev, and next month
 	private void init() {
-		//populate current, prev, and next month
 		Calendar cal = Calendar.getInstance();
 		day = cal.get(Calendar.DAY_OF_MONTH);
 		month = cal.get(Calendar.MONTH);
@@ -30,7 +30,8 @@ public class LCalendar {
 		nextMonth = new MonthArray(month == 11 ? year + 1 : year, month == 11 ? 0 : month + 1);
 	}
 	
-	public static int convertWeekday(int i) { //to convert Calendar.DAY_OF_WEEK to 0 index and Mon-Sun format
+	//convert Calendar.DAY_OF_WEEK to 0-indexing and Mon-Sun format
+	public static int convertWeekday(int i) {
 		int day;
 		
 		if (i < 0 || i > 6) throw new IndexOutOfBoundsException();
@@ -66,6 +67,7 @@ public class LCalendar {
 		return currentMonth;
 	}
 
+	//initialise the data structures for the current, previous and next month based on today's date
 	public MonthArray now() {
 		init();
 		return currentMonth;
