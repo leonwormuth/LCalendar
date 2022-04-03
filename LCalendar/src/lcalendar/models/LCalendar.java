@@ -72,6 +72,10 @@ public class LCalendar {
         init();
         return currentMonth;
     }
+    
+    public int getYear() {
+        return year;
+    }
 	
     public int getMonth() {
         return month;

@@ -90,7 +90,11 @@ public class LCalendarController {
     	    } else {
     	        g.getStyleClass().add(
     	            //check if the current box being generated is today
-    	            monthArray.getArray()[i] == today && monthArray.getMonth() == cal.getMonth() ? "today" : "day"
+    	            monthArray.getArray()[i] == today
+	                && monthArray.getMonth() == cal.getMonth() 
+	                && monthArray.getYear() == cal.getYear()
+                        ? "today" 
+                        : "day"
     	        );
     	        textStyle = "text";
     	    }			
